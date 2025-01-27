@@ -35,6 +35,13 @@ export const evaluate = ({curOperation, prevOperation, operation}) => {
 export const reducer = (state, { type, payload }) => {
     switch(type){
         case ACTIONS.ADD_DIGIT:
+            if(state.overwrite){
+                return {
+                    ...state,
+                    curOperation: payload.numCalc,
+                    overwrite:false
+                }
+            }
             if(payload.numCalc === "0" && state.curOperation === "0") return state
             if(payload.numCalc === "." && state.curOperation.includes(".")) return state;
             return {
@@ -46,7 +53,13 @@ export const reducer = (state, { type, payload }) => {
                 return state
             }
 
-            console.log(state.curOperation)
+            if(state.curOperation == null){
+                return {
+                    ...state,
+                    operation: payload.opCalc
+                }
+            }
+
             if(state.prevOperation == null){
                 return{
                     ...state,
@@ -61,6 +74,38 @@ export const reducer = (state, { type, payload }) => {
                 prevOperation: evaluate(state),
                 operation: payload.opCalc,
                 curOperation: null
+            }
+        case ACTIONS.EVALUATE:
+            if(state.operation == null || state.curOperation == null || state.prevOperation == null){
+                return state
+            } else{
+                return {
+                    ...state,
+                    overwrite: true,
+                    prevOperation: null,
+                    curOperation: evaluate(state),
+                    operation: null,
+                }
+            }
+        case ACTIONS.DELETE_DIGIT:
+            if(state.overwrite){
+                return {
+                    ...state,
+                    overwrite: false,
+                    curOperation: null
+                }
+            } else if(state.curOperation == null) {
+                return state
+            } else if(state.curOperation.length === 1){
+                return {
+                    ...state,
+                    curOperation: null
+                }
+            } else {
+                return {
+                    ...state,
+                    curOperation: state.curOperation.slice(0,-1)
+                }
             }
         case ACTIONS.CLEAR:
             return {}
