@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
-@theme {
+@layer components {
+  ::before, ::after {
+    box-sizing: border-box;
+  }
+
+  body{
+    background-color: #A6A6A6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* Style Calculator */
+  .gridPersonalizeRow{
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+  }
+  .gridPersonalizeCol{
+    grid-template-columns: repeat(4, 6rem);
+  }
+
+  .btn-big{
+    grid-column: span 2;
+  }
 
 }
