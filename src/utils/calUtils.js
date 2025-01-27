@@ -7,6 +7,24 @@ export const ACTIONS = {
     EVALUATE: 'evauate'
 }
 
+export const INT_FORMART = new Intl.NumberFormat("en-us", {
+    maximumFractionDigits: 0,
+})
+
+export const formart = (operand) => {
+    if(operand == null){
+        return
+    } else {
+        const[int, decimal] = operand.split(".")
+
+        if(decimal == null) {
+            return INT_FORMART.format(int)
+        } else{
+            return `${INT_FORMART.format(int)}.${decimal}`
+        }
+    }
+}
+
 export const evaluate = ({curOperation, prevOperation, operation}) => {
     const prev = parseFloat(prevOperation)
     const cur = parseFloat(curOperation)
