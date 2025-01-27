@@ -17,6 +17,7 @@
   .gridPersonalizeRow{
     grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
   }
+
   .gridPersonalizeCol{
     grid-template-columns: repeat(4, 6rem);
   }
@@ -25,4 +26,43 @@
     grid-column: span 2;
   }
 
+  @media (width <= 40rem) {
+    .gridPersonalizeRow{
+      grid-template-rows: minmax(7rem, auto) repeat(5, 5.5rem);
+    }
+  
+    .gridPersonalizeCol{
+      grid-template-columns: repeat(4, 5.5rem);
+    }
+  } 
+
+  @media (width <= 400px) {
+    .gridPersonalizeRow{
+      grid-template-rows: minmax(7rem, auto) repeat(5, 4.5rem);
+    }
+  
+    .gridPersonalizeCol{
+      grid-template-columns: repeat(4, 4.5rem);
+    }
+  } 
+
+  @media (width <= 330px) {
+    .gridPersonalizeRow{
+      grid-template-rows: minmax(7rem, auto) repeat(5, 4rem);
+    }
+  
+    .gridPersonalizeCol{
+      grid-template-columns: repeat(4, 4rem);
+    }
+  } 
+
+  @media (width <= 300px) {
+    .gridPersonalizeRow{
+      grid-template-rows: minmax(7rem, auto) repeat(5, 3rem);
+    }
+  
+    .gridPersonalizeCol{
+      grid-template-columns: repeat(4, 3rem);
+    }
+  } 
 }

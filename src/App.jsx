@@ -9,13 +9,13 @@ function App() {
 
   return (
     <>
-      <div className="grid gridPersonalizeRow gridPersonalizeCol border-y-[50px] border-x-[30px] rounded-xl bg-black gap-5 shadow-2xl">
+      <div className="grid gridPersonalizeRow gridPersonalizeCol lg:border-y-[50px] border-y-[25px] lg:border-x-[30px] border-x-[15px] rounded-xl bg-black shadow-2xl gap-1 lg:gap-5">
         <div className="col-span-4 bg-[#a2bf51] flex flex-col items-end justify-around p-2 break-all rounded-md">
-          <div className="text-[#ffffffa3] text-md">{formart(prevOperation)} {operation}</div>
-          <div className="text-white text-4xl">{formart(curOperation) || "" }</div>
+          <div className="text-[#ffffffa3] md:text-md text-sm">{formart(prevOperation)} {operation}</div>
+          <div className="text-white sm:text-4xl text-2xl">{formart(curOperation) || "" }</div>
         </div>
-        <button onClick={() => dispatch({type: ACTIONS.CLEAR})} className="btn-big text-3xl bg-[#b3b3b3] text-white inset-shadow-sm inset-shadow-gray-700 rounded-2xl shadow-md shadow-gray-900 hover:inset-shadow-gray-900 hover:shadow-black duration-250 hover:scale-98 ease-in">AC</button>
-        <button onClick={() => dispatch({type: ACTIONS.DELETE_DIGIT})} className="text-3xl bg-[#cc2d43] text-white inset-shadow-sm inset-shadow-gray-700 rounded-2xl shadow-md shadow-gray-900 hover:inset-shadow-gray-900 hover:shadow-black duration-250 hover:scale-98 ease-in">C</button>
+        <button onClick={() => dispatch({type: ACTIONS.CLEAR})} className="btn-big sm:text-3xl md:text-xl bg-[#b3b3b3] text-white sm:inset-shadow-sm inset-shadow-gray-700 rounded-2xl shadow-md shadow-gray-900 hover:inset-shadow-gray-900 hover:shadow-black duration-250 hover:scale-98 ease-in">AC</button>
+        <button onClick={() => dispatch({type: ACTIONS.DELETE_DIGIT})} className="sm:text-3xl md:text-xl bg-[#cc2d43] text-white sm:inset-shadow-sm inset-shadow-gray-700 rounded-2xl shadow-md shadow-gray-900 hover:inset-shadow-gray-900 hover:shadow-black duration-250 hover:scale-98 ease-in">C</button>
         <BtnOp opCalc="%" dispatch={dispatch}/>
         <BtnNum isNum numCalc="1" dispatch={dispatch}/>
         <BtnNum isNum numCalc="2" dispatch={dispatch}/>
@@ -31,7 +31,7 @@ function App() {
         <BtnOp opCalc="-" dispatch={dispatch}/>
         <BtnNum numCalc="." dispatch={dispatch}/>
         <BtnNum isNum numCalc="0" dispatch={dispatch}/>
-        <button onClick={() => dispatch({type: ACTIONS.EVALUATE})} className="btn-big text-3xl bg-[#f8a13a] text-white inset-shadow-sm inset-shadow-gray-700 rounded-2xl shadow-md shadow-gray-900 hover:inset-shadow-gray-900 hover:shadow-black duration-250 hover:scale-98 ease-in">=</button>
+        <button onClick={() => dispatch({type: ACTIONS.EVALUATE})} className="btn-big sm:text-3xl md:text-xl bg-[#f8a13a] text-white sm:inset-shadow-sm inset-shadow-gray-700 rounded-2xl shadow-md shadow-gray-900 hover:inset-shadow-gray-900 hover:shadow-black duration-250 hover:scale-98 ease-in">=</button>
       </div>
     </>
   )
