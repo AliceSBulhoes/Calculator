@@ -9,22 +9,22 @@ function App() {
           <div className="text-white text-4xl">111</div>
         </div>
         <BtnCalc isBig numCalc="AC" />
-        <BtnCalc numCalc="C" />
+        <BtnCalc isClear numCalc="C" />
         <BtnCalc numCalc="%" />
-        <BtnCalc numCalc="1" />
-        <BtnCalc numCalc="2" />
-        <BtnCalc numCalc="3" />
+        <BtnCalc isNum numCalc="1" />
+        <BtnCalc isNum numCalc="2" />
+        <BtnCalc isNum numCalc="3" />
         <BtnCalc numCalc="X" />
-        <BtnCalc numCalc="4" />
-        <BtnCalc numCalc="5" />
-        <BtnCalc numCalc="6" />
+        <BtnCalc isNum numCalc="4" />
+        <BtnCalc isNum numCalc="5" />
+        <BtnCalc isNum numCalc="6" />
         <BtnCalc numCalc="+" />
-        <BtnCalc numCalc="7" />
-        <BtnCalc numCalc="8" />
-        <BtnCalc numCalc="9" />
+        <BtnCalc isNum numCalc="7" />
+        <BtnCalc isNum numCalc="8" />
+        <BtnCalc isNum numCalc="9" />
         <BtnCalc numCalc="-" />
         <BtnCalc numCalc="," />
-        <BtnCalc numCalc="0" />
+        <BtnCalc isNum numCalc="0" />
         <BtnCalc isBig numCalc="=" />
       </div>
     </>
