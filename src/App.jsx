@@ -16,7 +16,7 @@ function App() {
         </div>
         <button onClick={() => dispatch({type: ACTIONS.CLEAR})} className="btn-big sm:text-3xl md:text-xl bg-[#b3b3b3] text-white sm:inset-shadow-sm inset-shadow-gray-700 rounded-2xl shadow-md shadow-gray-900 hover:inset-shadow-gray-900 hover:shadow-black duration-250 hover:scale-98 ease-in">AC</button>
         <button onClick={() => dispatch({type: ACTIONS.DELETE_DIGIT})} className="sm:text-3xl md:text-xl bg-[#cc2d43] text-white sm:inset-shadow-sm inset-shadow-gray-700 rounded-2xl shadow-md shadow-gray-900 hover:inset-shadow-gray-900 hover:shadow-black duration-250 hover:scale-98 ease-in">C</button>
-        <BtnOp opCalc="%" dispatch={dispatch}/>
+        <BtnOp opCalc="÷" dispatch={dispatch}/>
         <BtnNum isNum numCalc="1" dispatch={dispatch}/>
         <BtnNum isNum numCalc="2" dispatch={dispatch}/>
         <BtnNum isNum numCalc="3" dispatch={dispatch}/>

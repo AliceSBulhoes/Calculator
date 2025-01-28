@@ -43,7 +43,7 @@ export const evaluate = ({curOperation, prevOperation, operation}) => {
             case "x":
                 computation = prev * cur
                 break
-            case "%":
+            case "÷":
                 computation = prev / cur
                 break   
         }
